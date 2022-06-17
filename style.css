@@ -1,0 +1,112 @@
+body {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+/*
+.reactive-list__container ul {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  list-style: none;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  min-width: 400px;
+  transition: all 0.2s ease-in-out;
+  color: red;
+}
+li {
+  cursor: pointer;
+}
+li.active {
+  pointer-events: all;
+}
+ul.hidden {
+  color: transparent;
+  pointer-events: none;
+}
+ul.left {
+  transform: translateX(-10px);
+}
+
+.reactive-list__container {
+  position: relative;
+  min-width: 400px;
+}
+*/
+
+.reactive-list__container {
+  position: relative;
+}
+.category__button {
+  display: flex;
+  gap: 15px;
+  align-items: baseline;
+}
+.reactive-list {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  padding: 0;
+  opacity: 0;
+  transition: all 0.2s ease-in-out;
+  gap: 15px;
+}
+.reactive-list li {
+  cursor: pointer;
+  text-align: left;
+}
+.reactive-list:not(:first-child).show,
+.reactive-list.show {
+  left: 0;
+  opacity: 1;
+}
+.reactive-list:not(:first-child).left,
+.reactive-list.left {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-15px);
+}
+.reactive-list:not(:first-child).right,
+.reactive-list.right {
+  opacity: 0;
+  pointer-events: none;
+  top: 0;
+  transform: translateX(15px);
+}
+.reactive-list:not(:first-child) {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  left: 100%;
+}
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+[data-target]:after {
+  content: "\f061";
+  margin-left: auto;
+  display: block;
+  font-family: FontAwesome;
+}
+[data-target][data-back]::after {
+  content: "";
+}
+[data-target][data-back]::before {
+  content: "\f060";
+  margin-left: auto;
+  display: block;
+  margin-right: 15px;
+  margin-left: 0;
+  font-family: FontAwesome;
+}

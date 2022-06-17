@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/main.js"></script>
+    <div class="reactive-list__container">
+      <ul class="reactive-list show" id="base">
+        <li>
+          <a class="hidden">back</a>
+        </li>
+        <li>
+          <a class="category__button" data-target="aspirateur-industriel"
+            >Aspirateur industriel</a
+          >
+        </li>
+        <li>
+          <a class="category__button">Découpeuse à lame double</a>
+        </li>
+        <li>
+          <a class="category__button">Découpeuse à lame double</a>
+        </li>
+        <li>
+          <a class="category__button">Découpeuse à lame double</a>
+        </li>
+        <li>
+          <a class="category__button">Découpeuse à lame double</a>
+        </li>
+        <li>
+          <a class="category__button">Fraiseuse</a>
+        </li>
+      </ul>
+      <ul class="reactive-list" id="aspirateur-industriel">
+        <li>
+          <a class="category__button" data-back data-target="base">back</a>
+        </li>
+        <li>
+          <a class="category__button" data-target="grinder">grinder</a>
+        </li>
+        <li>
+          <a class="category__button"> Second Enfant de aspirateur </a>
+        </li>
+      </ul>
+      <ul class="reactive-list" id="grinder">
+        <li>
+          <a
+            class="category__button"
+            data-back
+            data-target="aspirateur-industriel"
+            >back</a
+          >
+        </li>
+        <li>
+          <a class="category__button"> Grinder à lame double </a>
+        </li>
+        <li>
+          <a class="category__button"> Grinder à lame simple </a>
+        </li>
+      </ul>
+    </div>
+  </body>
+  <script
+    src="https://kit.fontawesome.com/357fd2a761.js"
+    crossorigin="anonymous"
+  ></script>
+</html>
